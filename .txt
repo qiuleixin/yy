@@ -1,0 +1,22 @@
+查看当前是哪个分支 login分支
+git branch
+创建一个user分支 把代码放到user分支中
+git checkout -b user
+查看当前是哪个分支 user分支
+git branch
+
+查看当前的状态
+git status
+添加到暂存区
+git add .
+提交到本地
+git commit -m "完成了用户列表功能的开发"
+把user分支的代码提交到服务器上
+git push -u origin user
+
+检出master分支
+git checkout master
+合并user分支的代码 到 master分支
+git merge user
+把最新的代码推送到服务器上
+git push 
