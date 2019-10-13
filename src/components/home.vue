@@ -73,7 +73,7 @@
         methods: {
             logout() {
                 window.sessionStorage.clear('token')
-                console.log(this)
+                // console.log(this)
                 this.$router.push('/login')
                 
             },
@@ -82,7 +82,7 @@
                const {data:res}=await this.$http.get('menus')
                if(res.meta.status!=200) return this.$message.error('获取表单列表失败')
                 this.menuList=res.data
-               console.log(res)
+            //    console.log(res)
             },
             //点击按钮，切换菜单的展开和折叠
             toggleCollapse() {
