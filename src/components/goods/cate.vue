@@ -60,6 +60,7 @@
           <el-form-item label="父级分类">
             <!-- options 可选项数据源 -->
             <!-- props 配置选项 -->
+            <!-- 级联选择器 -->
             <el-cascader
               v-model="selectedKeys"
               :options="parentCateList"
