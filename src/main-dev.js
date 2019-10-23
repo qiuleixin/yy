@@ -15,13 +15,24 @@ import './assets/css/global.css'
 //导入字体图标样式
 import './assets/fonts/iconfont.css'
 
+// 导入Nprogress 对应的js 和css 
+import Nprogress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 import axios from 'axios'
 // 配置请求的根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+    // 在request 拦截器中展示进度条  Nprogress.start()
 axios.interceptors.request.use(config => {
-    // console.log(config)
-    config.headers.Authorization = window.sessionStorage.getItem('token')
-        //最后必须添加 return config
+        // console.log(config)
+        Nprogress.start()
+        config.headers.Authorization = window.sessionStorage.getItem('token')
+            //最后必须添加 return config
+        return config
+    })
+    // 在response拦截器中隐藏进度条 Nprogress.done()
+axios.interceptors.response.use(config => {
+    Nprogress.done()
     return config
 })
 Vue.prototype.$http = axios

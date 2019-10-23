@@ -1,11 +1,8 @@
 <template>
-    <h1>welcome</h1>
+  <h1>welcome</h1>
 </template>
 <script>
-export default {
-    
-}
+export default {}
 </script>
 <style lang="less" scoped>
-
 </style>
